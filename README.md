@@ -20,3 +20,7 @@ The normal and minified urnsocial.js files will be located in the dist directory
 ### Use
 
 See test.html for an example of use within HTML. Can be used as a node module also.
+
+```
+npm install urnsocial
+```
