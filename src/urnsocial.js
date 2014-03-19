@@ -1,4 +1,16 @@
-(function(_$) {
+ var module = module || undefined;
+ var define = define || undefined;
+(function( global, factory ) {
+  // loader logic following jquery's lead... ensures that we load properly into 
+  // node as well as normal browser environments...
+  if ( typeof module === 'object' && typeof module.exports === 'object' ) {
+    module.exports = global.document ?
+      factory(global) :
+      factory();
+  } else {
+    factory(global);
+  }
+}(typeof window !== 'undefined' ? window : this, function(_$) {
   'use strict';
   function to_ary(v) {
     return v !== undefined ?
@@ -59,4 +71,4 @@
   }
   _$.urn_social = urn_social;
   return urn_social;
-})(window||this);
+}));
