@@ -69,6 +69,15 @@
   for (var n in urn_social) {
     try { Object.freeze(urn_social[n]); } catch (t) {}
   }
-  _$.urn_social = urn_social;
+
+  if ( typeof define === 'function' && define.amd ) {
+    define( 'urn_social', [], function() {
+      return urn_social;
+    });
+  }
+
+  if (_$ !== undefined)
+    _$.urn_social = urn_social;
+
   return urn_social;
 }));
